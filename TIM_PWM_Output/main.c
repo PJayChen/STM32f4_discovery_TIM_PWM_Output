@@ -70,27 +70,27 @@ int main(void)
       n = -n; // if  brightness maximum/maximum change direction
     
     brightness += n;
-    TIM4->CCR1 = brightness - 1;
-    TIM4->CCR2 = brightness - 1;
-    TIM4->CCR3 = brightness - 1;
-    TIM4->CCR4 = brightness - 1;
+    // TIM4->CCR1 = brightness - 1;
+    // TIM4->CCR2 = brightness - 1;
+    // TIM4->CCR3 = brightness - 1;
+    // TIM4->CCR4 = brightness - 1;
     
     //Light LEDs in turn
-    // switch(who_run){
-    //     case 0:
-    //         TIM4->CCR1 = brightness - 1; // set brightness
-    //         break;
-    //     case 1:
-    //         TIM4->CCR2 = brightness - 1; // set brightness
-    //         break;
-    //     case 2:
-    //         TIM4->CCR3 = brightness - 1; // set brightness
-    //         break;
-    //     case 3:
-    //         TIM4->CCR4 = brightness - 1; // set brightness
-    //         break;
-    // }
-    for(i=0;i<15000;i++);  // delay
+    switch(who_run){
+        case 0:
+            TIM4->CCR1 = brightness - 1; // set brightness
+            break;
+        case 1:
+            TIM4->CCR2 = brightness - 1; // set brightness
+            break;
+        case 2:
+            TIM4->CCR3 = brightness - 1; // set brightness
+            break;
+        case 3:
+            TIM4->CCR4 = brightness - 1; // set brightness
+            break;
+    }
+    for(i=0;i<10000;i++);  // delay
   }
  
   return(0); // System will implode
